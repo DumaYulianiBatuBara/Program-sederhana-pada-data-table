@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(home: MyApp()));
+}
+
+class MyApp extends StatefulWidget {
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Rico Imanta Ginting - Kelas'),
+      ),
+      body: ListView(children: <Widget>[
+        Center(
+            child: Text('Data Mahasiswa',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+        DataTable(
+          columns: [
+            DataColumn(label: Text('NIRM')),
+            DataColumn(label: Text('Nama Mahasiswa')),
+            DataColumn(label: Text('Jurusan')),
+          ],
+          rows: [
+            DataRow(cells: [
+              DataCell(Text('2018020336')),
+              DataCell(Text('Duma Yuliani BatuBara')),
+              DataCell(Text('Sistem Informasi')),
+            ]),
+            DataRow(cells: [
+              DataCell(Text('2018020376')),
+              DataCell(Text('Imelda Ernasari Br Barus')),
+              DataCell(Text('Hukum')),
+            ]),
+            DataRow(cells: [
+              DataCell(Text('2018020707')),
+              DataCell(Text('Erry Oktavia')),
+              DataCell(Text('Ekonomi')),
+            ]),
+          ],
+        ),
+      ]),
+    );
+  }
+}
